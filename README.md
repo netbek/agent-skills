@@ -1,5 +1,37 @@
 # agent-skills
 
+## Development
+
+### Prerequisites
+
+1. Clone the repo:
+
+    ```shell
+    git clone --recurse-submodules git@github.com:netbek/agent-skills.git
+    ```
+
+2. Install Mise and add activation to `~/.bashrc`, e.g.
+
+    ```shell
+    curl -fsSL https://github.com/jdx/mise/releases/download/v2026.7.13/install.sh | sh
+    ```
+
+    See [other installation methods](https://mise.en.dev/installing-mise.html).
+
+3. Trust `mise.toml`:
+
+    ```shell
+    mise trust
+    ```
+
+4. Run `make install` to install Node dependencies, agent skills, and pinned vendor sources.
+
+### Release
+
+1. Run `make bump-version [major|minor|patch]`. This bumps `pyproject.toml`, syncs `package.json`, `dbt_project.yml`, and the `packages.yml` pin in this README, then commits.
+2. Push the commit.
+3. Check the tree is clean, then run `make create-release`.
+
 ## Acknowledgments
 
 `skills/writing-spec-and-design-docs` builds on ideas and wording from:
