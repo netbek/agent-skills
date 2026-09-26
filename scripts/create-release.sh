@@ -23,10 +23,10 @@ die() {
 
 [ $# -eq 0 ] || die "takes no arguments (version comes from package.json)"
 
+cd "${ROOT_DIR}"
+
 command -v gh >/dev/null 2>&1 || die "gh not found"
 command -v node >/dev/null 2>&1 || die "node not found"
-
-cd "${ROOT_DIR}"
 
 [ -z "$(git status --porcelain)" ] || die "uncommitted changes, commit or stash first"
 

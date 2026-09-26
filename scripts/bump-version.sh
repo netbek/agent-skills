@@ -34,7 +34,13 @@ fi
 
 cd "${ROOT_DIR}"
 
-pnpm version "${BUMP}"
+command -v pnpm >/dev/null 2>&1 || die "pnpm not found"
+command -v node >/dev/null 2>&1 || die "node not found"
+
+pnpm version "${BUMP}" --no-git-tag-version
+
+VERSION="$(node -p "require('./package.json').version")"
+[ -n "${VERSION}" ] && [ "${VERSION}" != "undefined" ] || die "could not read version from package.json"
 
 git add package.json
-git commit -m "chore(release): ${NEW}"
+git commit -m "chore(release): ${VERSION}"
