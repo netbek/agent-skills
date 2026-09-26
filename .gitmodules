@@ -1,0 +1,9 @@
+[submodule "OpenSpec"]
+	path = vendor/OpenSpec
+	url = https://github.com/Fission-AI/OpenSpec.git
+[submodule "skills"]
+	path = vendor/skills
+	url = https://github.com/mattpocock/skills.git
+[submodule "superpowers"]
+	path = vendor/superpowers
+	url = https://github.com/obra/superpowers.git
