@@ -1,16 +1,20 @@
 #!/usr/bin/env bash
-# Init/update vendor submodules (pinned to tags via gitlinks)
+# Initialise and update vendor submodules
 # Usage: install-vendor.sh (no args)
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT_DIR="$(readlink -f "${SCRIPT_DIR}/..")"
 
-# Init/update vendor submodules
+source "${SCRIPT_DIR}/common.sh"
+
+# Initialise and update vendor submodules.
 install_vendor() {
     cd "${ROOT_DIR}"
+    echo "${YELLOW}Updating vendor submodules...${RESET}"
     git submodule sync --recursive
-    git submodule update --init --recursive --depth 1
+    git submodule update --init --recursive
+    echo "${GREEN}Vendor submodules ready.${RESET}"
 }
 
 install_vendor
