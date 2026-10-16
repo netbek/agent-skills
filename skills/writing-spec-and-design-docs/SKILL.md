@@ -104,6 +104,8 @@ Template:
 ```markdown
 # <Feature> Specification
 
+> **Status:** [Draft|Approved]. Last updated [yyyy-mm-dd].
+
 ## Purpose
 
 <2-4 sentences: the problem and the outcome. No HOW.>
@@ -124,6 +126,12 @@ Template:
 Strict rules. Fix violations before requesting review:
 
 - Title is `# <Feature> Specification`.
+- The status line comes immediately below the title (H1 element) in this
+  exact format: `> **Status:** [Draft|Approved]. Last updated [yyyy-mm-dd].`
+  Only these statuses exist: `Draft` means the plan is being written;
+  `Approved` means the plan is approved and ready for implementation.
+- Never record an approver or any other user name. Never record a version
+  number.
 - `## Purpose` is substantive prose (2-4 sentences), never a placeholder.
 - Each `### Requirement:` states exactly one observable behavior with exactly
   one normative keyword: `SHALL` or `MUST` (default to `SHALL`). Never use
@@ -153,6 +161,8 @@ Template:
 
 ```markdown
 # <Feature> Design
+
+> **Status:** Last updated [yyyy-mm-dd].
 
 ## Context
 
@@ -218,6 +228,11 @@ Template:
 
 Guidance:
 
+- The last-updated line comes immediately below the title (H1 element) in
+  this exact format: `> **Status:** Last updated [yyyy-mm-dd].` Design docs
+  have no Draft/Approved status because they are living documents; record only
+  the last-updated date. Never record an approver, any other user name, or a
+  version number. Update the date on every edit.
 - Optional sections (include only when the feature needs them): state or
   lifecycle tables, concurrency and correctness analysis, a configuration
   reference table, an error reference table with exact message strings. When
@@ -237,15 +252,18 @@ Guidance:
 
 After the user approves the docs:
 
-- `spec.md` is frozen. Typo and clarification fixes that change no behavior are
-  free. Any behavior change is appended as a dated entry under a trailing
-  `## Amendments` section (what changed, why, and any migration), with the spec
-  version bumped and re-approved. Never rewrite approved requirements silently.
-- `design.md` is living. Update it freely as implementation learning demands.
-  If a design edit requires a spec behavior change, amend the spec first.
+- `spec.md` is frozen with status `Approved`. Typo and clarification fixes
+  that change no behavior are free; refresh the last-updated date only. Any
+  behavior change reverts the status to `Draft`, is appended as a dated entry
+  under a trailing `## Amendments` section (what changed, why, and any
+  migration), and must be re-approved to return the status to `Approved` with
+  a refreshed date. Never rewrite approved requirements silently.
+- `design.md` is living. Update it freely as implementation learning demands
+  and refresh the last-updated date on every edit. If a design edit requires
+  a spec behavior change, amend the spec first via the Draft cycle above.
 
-The header of each file states its status: spec records its frozen version,
-approver, and date; design records its last update date.
+Never record an approver, any other user name, or a version number in either
+file.
 
 ## Review checklist
 
