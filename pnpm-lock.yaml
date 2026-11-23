@@ -9,8 +9,8 @@ importers:
   .:
     devDependencies:
       '@netbek/skills-manager':
-        specifier: ^0.2.1
-        version: 0.2.1
+        specifier: ^0.2.2
+        version: 0.2.2
       npm-check-updates:
         specifier: ^23.1.0
         version: 23.1.0
@@ -21,8 +21,8 @@ packages:
     resolution: {integrity: sha512-wgm9Ehl2jpeqP3zw/7mo3kRHFp5MEDhqAdwy1fTGkHAwnkGOVsgpvQhL8B5n1qlb01jV3n/bI0ZfZp5lWA1k4w==}
     engines: {node: '>=18.0.0'}
 
-  '@netbek/skills-manager@0.2.1':
-    resolution: {integrity: sha512-nNYi8YYGZ+tAjhio/p4LR3ju5kMpTsLTI5T+XIsK1tUcHwU3pQ8247t4KP55hgSUfcMl4AQxkgrqRGWGj7s23A==}
+  '@netbek/skills-manager@0.2.2':
+    resolution: {integrity: sha512-NGzXE9X6iw3Xn9TKWOGhR9XNE+B2Zuaj0ab4NluNQAeVv4/RrAeuv1ggJBnBjfsReSTcQjAENeaKcaTvJUwSCw==}
     engines: {node: '>=24'}
     hasBin: true
 
@@ -38,13 +38,16 @@ packages:
     resolution: {integrity: sha512-KZxYo1BUkWD2TVFLr0MQoM8vUUigWD3LlD83a/75BqC+4qE0Hb1Vo5v1FgcfaNXvfXzr+5EhQ6ing/CaBijTlw==}
     engines: {node: '>= 18'}
 
+  nostics@1.3.0:
+    resolution: {integrity: sha512-wzRsrJwNlFbqIRQt8aCeL2WE8USip/uuvGSOZV1D02CxX8ABTMbw8IywKjH7yWHETMXbWJI4OBpihg9rmz2Vyg==}
+
   npm-check-updates@23.1.0:
     resolution: {integrity: sha512-u6Odx/JDpDXNqXp5pPsVN0RhuWkNrBe4Sz26J7yWJcEadopKhQgcB+bFq2PK35iJY6vc6h1PbnXmnwfiOFQl/w==}
     engines: {node: ^22.22.2 || ^24.15.0 || >=26.0.0, npm: '>=10.0.0'}
     hasBin: true
 
-  skills@1.7.0:
-    resolution: {integrity: sha512-OfePnDft+Xt9/tCoHdCUe5fkM8i+Q3QOSQO53hm7mKtsXyvc+CKOAAliVWZ484HS3cWx+6r+ob0AArixs3jYXw==}
+  skills@1.8.1:
+    resolution: {integrity: sha512-QK3wlZ5j8wcpLPUOXt7+1Gu1f9JKpv7lBpO0zmqKa5VBrt45/woVo8Max1x4wha3pCNafNHiiodYK6Xi/0alQQ==}
     engines: {node: '>=22.20.0'}
     hasBin: true
 
@@ -67,9 +70,9 @@ snapshots:
     dependencies:
       minipass: 7.1.3
 
-  '@netbek/skills-manager@0.2.1':
+  '@netbek/skills-manager@0.2.2':
     dependencies:
-      skills: 1.7.0
+      skills: 1.8.1
       yaml: 2.9.1
 
   chownr@3.0.0: {}
@@ -80,10 +83,13 @@ snapshots:
     dependencies:
       minipass: 7.1.3
 
+  nostics@1.3.0: {}
+
   npm-check-updates@23.1.0: {}
 
-  skills@1.7.0:
+  skills@1.8.1:
     dependencies:
+      nostics: 1.3.0
       tar: 7.5.22
       yaml: 2.9.1
 
